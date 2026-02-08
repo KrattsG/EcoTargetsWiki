@@ -2,7 +2,7 @@
    FILE SYSTEM MANAGEMENT
    ======================== */
 
-import { propertiesData, fileSystem } from './config.js';
+import { propertiesData, fileSystem, BASE_PATH } from './config.js';
 
 /**
  * Build file system map for quick lookups
@@ -30,7 +30,8 @@ export async function loadAndDisplayFile(filePath) {
   }
 
   try {
-    const response = await fetch(filePath);
+    const url = BASE_PATH + '/' + filePath;
+    const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const content = await response.text();
     displayContent(fileInfo.key, content, fileInfo.props);
