@@ -35,10 +35,12 @@
   </div>
 
   <script type="module">
+    import { loadProperties } from '../js/config.js';
     import { displayCards } from '../js/cards.js';
     import { initPopup } from '../js/popup.js';
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadProperties();
       displayCards('characters', 'characters-grid', 'characters', 'ProtocolW');
       initPopup();
     });

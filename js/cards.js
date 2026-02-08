@@ -37,7 +37,7 @@ export function displayCards(category = 'characters', gridId = 'characters-grid'
 
   for (const [key, item] of Object.entries(itemsToDisplay)) {
     const link = document.createElement('a');
-    link.href = `#/explorer/${basePath}/${key.toLowerCase()}.html`;
+    link.href = `/${basePath}/${key.toLowerCase()}.html`;
     link.style.textDecoration = 'none';
 
     const card = document.createElement('div');
