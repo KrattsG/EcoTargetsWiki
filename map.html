@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>World Explorer - Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="explorer.html" class="nav-link">Explorer</a>
+    <a href="map.html" class="nav-link active">Map</a>
+  </nav>
+
+  <main class="main">
+    <h1>World Map</h1>
+    <p>Explore the locations of EcoTargets world.</p>
+
+    <div class="map-container">
+      <img src="image/EcoMap.png" alt="EcoTargets World Map" style="max-width: 100%; height: -webkit-fill-available; object-fit: contain;" />
+      <div id="map-markers" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+        <!-- Location markers will be populated here -->
+      </div>
+    </div>
+  </main>
+
+<script>
+/* ------------------------
+   INTERACTION
+------------------------ */
+
+let propertiesData;
+
+async function loadProperties() {
+  try {
+    const response = await fetch('properties.json');
+    propertiesData = await response.json();
+    displayMarkers();
+  } catch (error) {
+    console.error('Error loading properties.json:', error);
+  }
+}
+
+function displayMarkers() {
+  const markersDiv = document.getElementById('map-markers');
+  markersDiv.innerHTML = '';
+
+  if (propertiesData.locations) {
+    for (const [key, location] of Object.entries(propertiesData.locations)) {
+      if (location.position) {
+        const marker = document.createElement('a');
+        marker.href = `locations/${key}.html`;
+        marker.style.position = 'absolute';
+        marker.style.left = `${location.position.x}%`;
+        marker.style.top = `${location.position.y}%`;
+        marker.style.transform = 'translate(-50%, -50%)';
+        marker.innerHTML = `<div style="background: red; width: 20px; height: 20px; border-radius: 50%; cursor: pointer;"></div>`;
+        markersDiv.appendChild(marker);
+      }
+    }
+  }
+}
+
+// Load properties on page load
+document.addEventListener('DOMContentLoaded', loadProperties);
+</script>
+
+</body>
+</html>

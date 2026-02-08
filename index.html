@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#/home" class="nav-link">Home</a>
+    <a href="#/explorer" class="nav-link">Explorer</a>
+    <a href="#/map" class="nav-link">Map</a>
+  </nav>
+
+  <!-- Home Page -->
+  <div id="home" class="page">
+    <header class="header">
+      <h1>World Explorer</h1>
+      <p>Welcome to the world of EcoTargets. Discover characters, locations, and lore.</p>
+    </header>
+
+    <main class="main">
+      <section class="characters-section">
+        <h2>Characters</h2>
+        <div class="characters-grid" id="characters-grid">
+          <!-- Characters will be populated here -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Explorer Page -->
+  <div id="explorer" class="page">
+    <aside class="sidebar">
+      <h2>World Explorer</h2>
+      <ul class="tree" id="file-tree">
+        <!-- Dynamically populated -->
+      </ul>
+    </aside>
+
+    <main class="main">
+      <h1>Explorer</h1>
+      <p class="placeholder">Select a file from the explorer to view its contents.</p>
+    </main>
+  </div>
+
+  <!-- Map Page -->
+  <div id="map" class="page">
+    <main class="main">
+      <h1>World Map</h1>
+      <p>Explore the locations of EcoTargets world.</p>
+
+      <div class="map-container">
+        <img src="image/EcoMap.png" alt="EcoTargets World Map" style="max-width: 100%; height: -webkit-fill-available; display: block;"/>
+        <div id="map-markers" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          <!-- Markers will be populated here -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Popup iframe for Ctrl+hover -->
+  <div id="popup-iframe" style="position: fixed; display: none; z-index: 1000; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); padding: 10px; max-width: 80vw; max-height: 80vh; overflow: auto;">
+    <button id="popup-close" style="position: absolute; top: 5px; right: 5px; background: none; border: none; font-size: 20px; cursor: pointer; color: #999; z-index: 1001;">&times;</button>
+    <iframe id="popup-iframe-content" style="width: 50vh; height: 50vh; border: none;"></iframe>
+  </div>
+
+  <!-- Load modular JavaScript -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
+
+</body>
+</html>

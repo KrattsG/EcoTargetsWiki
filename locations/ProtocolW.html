@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ProtocolW - EcoTargets World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>The Home Protocol of Mansion</h1>
+    <p>Mansion a feared Scientist in the Area is the indentity of the region</p>
+  </header>
+
+  <main class="main">
+    <section class="location-description">
+      <p>Key features:</p>
+      <ul>
+        <li>Advanced laboratory for experimental protocols</li>
+      </ul>
+    </section>
+
+    <section class="characters-section">
+      <h2>Characters in ProtocolW</h2>
+      <div class="characters-grid" id="characters-grid">
+        <!-- Characters will be populated here -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Load properties and display cards using fetch to handle relative paths
+    async function init() {
+      try {
+        // Load properties from parent directory
+        const propsResponse = await fetch('../properties.json');
+        const propertiesData = await propsResponse.json();
+        
+        // Get the grid element
+        const grid = document.getElementById('characters-grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        
+        // Filter characters for ProtocolW location
+        const locationData = propertiesData.locations.ProtocolW;
+        if (locationData && locationData.characters) {
+          for (const charName of locationData.characters) {
+            if (propertiesData.characters[charName]) {
+              const character = propertiesData.characters[charName];
+              const key = charName;
+              
+              const link = document.createElement('a');
+              link.href = `#/explorer/characters/${key.toLowerCase()}.html`;
+              link.style.textDecoration = 'none';
+              
+              const card = document.createElement('div');
+              card.className = 'character-card';
+              card.innerHTML = `
+                <div class="image-wrapper">
+                  <img src="${character.image}" alt="${key} profile">
+                  <div class="name-overlay">
+                    <h3>${key.charAt(0).toUpperCase() + key.slice(1)}</h3>
+                  </div>
+                </div>
+              `;
+              
+              link.appendChild(card);
+              grid.appendChild(link);
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error loading ProtocolW data:', error);
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

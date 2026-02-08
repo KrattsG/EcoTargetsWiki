@@ -1,0 +1,68 @@
+{
+  "characters": {
+    "Dent": {
+      "type": "character",
+      "author": "Kratts",
+      "tags": [""],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+    },
+    "Mira": {
+      "type": "character",
+      "author": "Lemon",
+      "tags": [""],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+    },
+    "Jul": {
+      "type": "character",
+      "author": "",
+      "tags": [""],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+    },
+    "Cask": {
+      "type": "character",
+      "author": "",
+      "tags": [""],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+    },
+    "Coky": {
+      "type": "character",
+      "author": "",
+      "tags": [""],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+    },
+    "Null": {
+      "type": "character",
+      "author": "",
+      "tags": [""],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+    },
+    "Skell": {
+      "type": "character",
+      "author": "",
+      "tags": [""],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+    }
+  },
+  "locations": {
+    "ProtocolW": {
+      "type": "location",
+      "author": "EcoTargets Team",
+      "tags": ["urban", "technology"],
+      "characters": ["Dent"],
+      "position": {
+        "x": 40,
+        "y": 30
+      }
+    },
+      "ProtocolJ": {
+      "type": "location",
+      "author": "EcoTargets Team",
+      "tags": ["urban", "technology"],
+      "characters": ["Null"],
+      "position": {
+        "x": 55,
+        "y": 55
+      }
+    }
+  }
+}
