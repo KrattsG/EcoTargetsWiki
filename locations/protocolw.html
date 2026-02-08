@@ -28,53 +28,20 @@
     </section>
   </main>
 
-  <script>
-    // Load properties and display cards using fetch to handle relative paths
-    async function init() {
-      try {
-        // Load properties from root directory
-        const propsResponse = await fetch('/properties.json');
-        const propertiesData = await propsResponse.json();
-        
-        // Get the grid element
-        const grid = document.getElementById('characters-grid');
-        if (!grid) return;
-        grid.innerHTML = '';
-        
-        // Filter characters for ProtocolW location
-        const locationData = propertiesData.locations.ProtocolW;
-        if (locationData && locationData.characters) {
-          for (const charName of locationData.characters) {
-            if (propertiesData.characters[charName]) {
-              const character = propertiesData.characters[charName];
-              const key = charName;
-              
-              const link = document.createElement('a');
-              link.href = `/characters/${key.toLowerCase()}.html`;
-              link.style.textDecoration = 'none';
-              
-              const card = document.createElement('div');
-              card.className = 'character-card';
-              card.innerHTML = `
-                <div class="image-wrapper">
-                  <img src="${character.image}" alt="${key} profile">
-                  <div class="name-overlay">
-                    <h3>${key.charAt(0).toUpperCase() + key.slice(1)}</h3>
-                  </div>
-                </div>
-              `;
-              
-              link.appendChild(card);
-              grid.appendChild(link);
-            }
-          }
-        }
-      } catch (error) {
-        console.error('Error loading ProtocolW data:', error);
-      }
-    }
-    
-    document.addEventListener('DOMContentLoaded', init);
+  <!-- Popup iframe for Ctrl+hover -->
+  <div id="popup-iframe" style="position: fixed; display: none; z-index: 1000;background: #141821; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); padding: 10px; max-width: 80vw; max-height: 80vh; overflow: auto;">
+    <button id="popup-close" style="position: absolute; top: 5px; right: 5px; background: none; border: none; font-size: 20px; cursor: pointer; color: #999; z-index: 1001;">&times;</button>
+    <iframe id="popup-iframe-content" style="width: 50vh; height: 50vh; border: none;"></iframe>
+  </div>
+
+  <script type="module">
+    import { displayCards } from '../js/cards.js';
+    import { initPopup } from '../js/popup.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      displayCards('characters', 'characters-grid', 'characters', 'ProtocolW');
+      initPopup();
+    });
   </script>
 </body>
 </html>
