@@ -68,7 +68,36 @@ function displayContent(title, content, props) {
   const iframe = document.getElementById(iframeId);
   if (iframe && iframe.contentDocument) {
     iframe.contentDocument.open();
-    iframe.contentDocument.write(content);
+    iframe.contentDocument.write(`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { 
+            margin: 16px; 
+            font-family: Inter, system-ui, sans-serif;
+            color: #e0e6ff;
+            line-height: 1.8;
+            font-size: 16px;
+            background: #0f1115;
+          }
+          p { 
+            color: #e0e6ff;
+            line-height: 1.8;
+            margin: 12px 0;
+          }
+          a {
+            color: #8a9eff;
+            text-decoration: underline;
+          }
+          a:hover {
+            color: #b0c4ff;
+          }
+        </style>
+      </head>
+      <body>${content}</body>
+      </html>
+    `);
     iframe.contentDocument.close();
   }
 }

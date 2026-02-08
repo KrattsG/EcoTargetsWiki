@@ -13,7 +13,12 @@ body {
   background: #0f1115;
   color: #e6e6e6;
   height: 100vh;
-  overflow: hidden;
+}
+
+p {
+  color: #e0e6ff;
+  line-height: 1.8;
+  font-size: 16px;
 }
 
 .page {
@@ -171,8 +176,9 @@ body {
 }
 
 .main p {
-  color: #b8bccd;
-  line-height: 1.6;
+  color: #c6c6c6;
+  line-height: 1.8;
+  font-size: 16px;
 }
 
 /* Empty state */
@@ -196,9 +202,10 @@ body {
 
 .header p {
   font-size: 18px;
-  color: #b8bccd;
+  color: #e0e6ff;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.8;
 }
 
 /* Characters section */
@@ -289,9 +296,11 @@ body {
     padding: 16px;
     border-radius: 8px;
     margin-bottom: 20px;
-    color: #b8bccd;
+    color: #e0e6ff;
 }
 
 .properties p {
     margin: 4px 0;
+    font-size: 16px;
+    line-height: 1.8;
 }
