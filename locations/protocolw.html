@@ -32,8 +32,8 @@
     // Load properties and display cards using fetch to handle relative paths
     async function init() {
       try {
-        // Load properties from parent directory
-        const propsResponse = await fetch('../properties.json');
+        // Load properties from root directory
+        const propsResponse = await fetch('/properties.json');
         const propertiesData = await propsResponse.json();
         
         // Get the grid element
@@ -50,7 +50,7 @@
               const key = charName;
               
               const link = document.createElement('a');
-              link.href = `#/explorer/characters/${key.toLowerCase()}.html`;
+              link.href = `/characters/${key.toLowerCase()}.html`;
               link.style.textDecoration = 'none';
               
               const card = document.createElement('div');
