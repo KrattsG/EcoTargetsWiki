@@ -62,3 +62,10 @@ export function displayCards(category = 'characters', gridId = 'characters-grid'
 export function displayCharacters() {
   displayCards('characters', 'characters-grid', 'characters');
 }
+
+/**
+ * Display location cards
+ */
+export function displayLocations() {
+  displayCards('locations', 'locations-grid', 'locations');
+}

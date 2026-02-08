@@ -4,7 +4,7 @@
 
 import { loadProperties } from './config.js';
 import { buildFileSystem } from './fileSystem.js';
-import { displayCharacters } from './cards.js';
+import { displayCharacters, displayLocations } from './cards.js';
 import { buildFileTree, initMap } from './ui.js';
 import { initPopup } from './popup.js';
 import { initRouting } from './routing.js';
@@ -22,6 +22,7 @@ async function init() {
     
     // Render initial UI elements
     displayCharacters();
+    displayLocations();
     buildFileTree();
     
     // Initialize popup preview feature

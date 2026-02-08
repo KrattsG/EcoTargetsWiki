@@ -239,9 +239,29 @@ p {
 .characters-section h2 {
   font-size: 32px;
   margin-bottom: 24px;
+  color: #e0e6ff;
 }
 
 .characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Locations section */
+.locations-section {
+  padding: 32px;
+  border-top: 1px solid rgba(138, 143, 163, 0.1);
+}
+
+.locations-section h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: #e0e6ff;
+}
+
+.locations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
