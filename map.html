@@ -8,7 +8,7 @@
 </head>
 <body>
   <nav class="nav">
-    <a href="index.html" class="nav-link">Home</a>
+    <a href="home.html" class="nav-link">Home</a>
     <a href="explorer.html" class="nav-link">Explorer</a>
     <a href="map.html" class="nav-link active">Map</a>
   </nav>
@@ -25,46 +25,7 @@
     </div>
   </main>
 
-<script>
-/* ------------------------
-   INTERACTION
------------------------- */
-
-let propertiesData;
-
-async function loadProperties() {
-  try {
-    const response = await fetch('properties.json');
-    propertiesData = await response.json();
-    displayMarkers();
-  } catch (error) {
-    console.error('Error loading properties.json:', error);
-  }
-}
-
-function displayMarkers() {
-  const markersDiv = document.getElementById('map-markers');
-  markersDiv.innerHTML = '';
-
-  if (propertiesData.locations) {
-    for (const [key, location] of Object.entries(propertiesData.locations)) {
-      if (location.position) {
-        const marker = document.createElement('a');
-        marker.href = `locations/${key}.html`;
-        marker.style.position = 'absolute';
-        marker.style.left = `${location.position.x}%`;
-        marker.style.top = `${location.position.y}%`;
-        marker.style.transform = 'translate(-50%, -50%)';
-        marker.innerHTML = `<div style="background: red; width: 20px; height: 20px; border-radius: 50%; cursor: pointer;"></div>`;
-        markersDiv.appendChild(marker);
-      }
-    }
-  }
-}
-
-// Load properties on page load
-document.addEventListener('DOMContentLoaded', loadProperties);
-</script>
+  <script type="module" src="js/main.js"></script>
 
 </body>
 </html>

@@ -3,66 +3,100 @@
     "Dent": {
       "type": "character",
       "author": "Kratts",
-      "tags": [""],
-      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+      "tags": ["engineer"],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png",
+      "description": "A skilled technician and explorer, Dent is known for their expertise in ancient technology and their unwavering determination to uncover the secrets of the EcoTargets world.",
+      "location": "ProtocolW",
+      "skills": ["Technology Repair", "Ancient Languages", "Navigation"]
     },
     "Mira": {
       "type": "character",
       "author": "Lemon",
-      "tags": [""],
-      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+      "tags": ["fighter"],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png",
+      "description": "A charismatic diplomat and natural leader, Mira excels at bringing different factions together and finding peaceful solutions to complex problems.",
+      "location": "ProtocolW",
+      "skills": ["Diplomacy", "Strategy", "Communication"]
+    },
+    "Navi": {
+      "type": "character",
+      "author": "Slitle",
+      "tags": ["fighter"],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png",
+      "description": "A charismatic diplomat and natural leader, Mira excels at bringing different factions together and finding peaceful solutions to complex problems.",
+      "location": "ProtocolW",
+      "skills": []
     },
     "Jul": {
       "type": "character",
       "author": "",
-      "tags": [""],
-      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+      "tags": ["fighter"],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png",
+      "description": "A brilliant researcher dedicated to understanding the ancient civilizations that once thrived in the EcoTargets world.",
+      "location": "ProtocolJ",
+      "skills": ["Research", "Analysis", "Ancient History"]
     },
     "Cask": {
       "type": "character",
       "author": "",
-      "tags": [""],
-      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+      "tags": ["engineer"],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png",
+      "description": "A savvy merchant who travels between settlements, trading goods and information while maintaining a vast network of contacts.",
+      "location": "ProtocolW",
+      "skills": ["Trade", "Negotiation", "Logistics"]
     },
     "Coky": {
       "type": "character",
       "author": "",
-      "tags": [""],
-      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+      "tags": ["researcher"],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png",
+      "description": "An innovative engineer who specializes in sustainable construction and renewable energy systems.",
+      "location": "ProtocolJ",
+      "skills": ["Engineering", "Construction", "Energy Systems"]
     },
     "Null": {
       "type": "character",
       "author": "",
-      "tags": [""],
-      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+      "tags": ["botanist"],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png",
+      "description": "A mysterious figure whose origins and motives remain unknown, often appearing at crucial moments in the world's history.",
+      "location": "ProtocolJ",
+      "skills": ["Stealth", "Observation", "Unknown"]
     },
     "Skell": {
       "type": "character",
       "author": "",
-      "tags": [""],
-      "image": "https://i.redd.it/3gaslozl2cwf1.png"
+      "tags": ["fighter"],
+      "image": "https://i.redd.it/3gaslozl2cwf1.png",
+      "description": "A formidable warrior dedicated to protecting the innocent and maintaining order in the chaotic regions of the EcoTargets world.",
+      "location": "ProtocolW",
+      "skills": ["Combat", "Defense", "Strategy"]
     }
   },
   "locations": {
     "ProtocolW": {
       "type": "location",
       "author": "EcoTargets Team",
-      "tags": ["urban", "technology"],
-      "characters": ["Dent"],
+      "image": "https://i.redd.it/for-hire-2d-concept-artist-visual-development-background-v0-hh6nk3gflsec1.jpg?width=2560&format=pjpg&auto=webp&s=30dee9a60fa3f1fc640689061fac17a7c18cba75",
+      "tags": [],
+      "characters": ["Dent", "Mira", "Cask", "Skell"],
       "position": {
         "x": 40,
         "y": 30
-      }
+      },
+      "description": "A bustling technological hub and major trade center, ProtocolW represents the pinnacle of modern civilization in the EcoTargets world. Its towering spires and advanced infrastructure serve as a beacon of progress and innovation."
     },
-      "ProtocolJ": {
+    "ProtocolJ": {
       "type": "location",
       "author": "EcoTargets Team",
-      "tags": ["urban", "technology"],
-      "characters": ["Null"],
+      "image": "https://i.redd.it/for-hire-2d-concept-artist-visual-development-background-v0-hh6nk3gflsec1.jpg?width=2560&format=pjpg&auto=webp&s=30dee9a60fa3f1fc640689061fac17a7c18cba75",
+      "tags": [],
+      "characters": ["Jul", "Coky", "Null"],
       "position": {
         "x": 55,
         "y": 55
-      }
+      },
+      "description": "A center of research and ancient knowledge, ProtocolJ is home to the world's most prestigious academic institutions and archaeological sites. Its libraries and laboratories contain countless secrets waiting to be discovered."
     }
   }
 }

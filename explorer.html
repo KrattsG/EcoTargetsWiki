@@ -6,7 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body style="display: flex; height: 100%;">
+<body>
+  <nav class="nav">
+    <a href="home.html" class="nav-link">Home</a>
+    <a href="explorer.html" class="nav-link active">Explorer</a>
+    <a href="map.html" class="nav-link">Map</a>
+  </nav>
+
+  <div style="display: flex; height: 100%;">
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <h2>World Explorer</h2>
@@ -19,6 +26,10 @@
   <main class="main">
     <h1>Explorer</h1>
     <p class="placeholder">Select a file from the explorer to view its contents.</p>
+  </main>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
 
 </body>
 </html>

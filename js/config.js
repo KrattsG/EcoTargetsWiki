@@ -4,17 +4,17 @@
 
 // Detect base path for GitHub Pages support
 export const BASE_PATH = (() => {
-  const pathname = window.location.pathname;
-  // Extract the repository name from pathname
-  // e.g., /EcoTargetsWiki/ or /EcoTargets/ -> return /EcoTargetsWiki or /EcoTargets
+  const { hostname, pathname } = window.location;
   const match = pathname.match(/^\/([^\/]+)/);
-  if (match) {
-    const repoName = match[1];
-    // Only return base path if it looks like a repo name (not empty, not root)
-    if (repoName && repoName !== 'index.html') {
-      return '/' + repoName;
-    }
+  const firstSegment = match ? match[1] : '';
+
+  // GitHub Pages project site: https://<user>.github.io/<repo>/...
+  if (hostname.endsWith('github.io')) {
+    return firstSegment ? `/${firstSegment}` : '';
   }
+
+  // Non-GitHub hosting (localhost/custom domain): treat the site as rooted at '/'
+  // so subpages like '/locations/...' still load '/properties.json'.
   return '';
 })();
 

@@ -20,6 +20,35 @@
     <header class="header">
       <h1>World Explorer</h1>
       <p>Welcome to the world of EcoTargets. Discover characters, locations, and lore.</p>
+      
+      <!-- Search and Filter Controls -->
+      <div class="search-controls">
+        <div class="search-container">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" placeholder="Search characters, locations, or tags..." />
+            <button id="search-clear" class="search-clear">&times;</button>
+          </div>
+        </div>
+        
+        <div class="filter-container">
+          <div class="filter-group">
+            <label class="filter-label" for="tag-filter">Tags:</label>
+            <select id="tag-filter">
+              <option value="">All Tags</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label" for="location-filter">Location:</label>
+            <select id="location-filter">
+              <option value="">All Locations</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="search-stats" id="search-stats"></div>
+      </div>
     </header>
 
     <main class="main">
@@ -69,16 +98,8 @@
     </main>
   </div>
 
-  <!-- Popup iframe for Ctrl+hover -->
-  <div id="popup-iframe" style="position: fixed; display: none; z-index: 1000;background: #141821; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); padding: 10px; max-width: 80vw; max-height: 80vh; overflow: auto;">
-    <button id="popup-close" style="position: absolute; top: 5px; right: 5px; background: none; border: none; font-size: 20px; cursor: pointer; color: #999; z-index: 1001;">&times;</button>
-    <iframe id="popup-iframe-content" style="width: 50vh; height: 50vh; border: none;"></iframe>
-  </div>
-
+  <!-- Character Detail Modal -->
   <!-- Load modular JavaScript -->
   <script type="module" src="js/main.js"></script>
-</body>
-</html>
-
 </body>
 </html>

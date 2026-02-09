@@ -28,21 +28,15 @@
     </section>
   </main>
 
-  <!-- Popup iframe for Ctrl+hover -->
-  <div id="popup-iframe" style="position: fixed; display: none; z-index: 1000;background: #141821; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); padding: 10px; max-width: 80vw; max-height: 80vh; overflow: auto;">
-    <button id="popup-close" style="position: absolute; top: 5px; right: 5px; background: none; border: none; font-size: 20px; cursor: pointer; color: #999; z-index: 1001;">&times;</button>
-    <iframe id="popup-iframe-content" style="width: 50vh; height: 50vh; border: none;"></iframe>
-  </div>
-
   <script type="module">
     import { loadProperties } from '../js/config.js';
     import { displayCards } from '../js/cards.js';
-    import { initPopup } from '../js/popup.js';
 
     document.addEventListener('DOMContentLoaded', async () => {
       await loadProperties();
+      
+      // Display characters at this location with modal functionality
       displayCards('characters', 'characters-grid', 'characters', 'ProtocolW');
-      initPopup();
     });
   </script>
 </body>
